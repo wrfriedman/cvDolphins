@@ -1,6 +1,6 @@
 '''
 Created on Feb 10, 2012
-  
+
 @authors: Whitney Friedman and Edwin Hutchins
 A module to read frames from a video file and write a new video consisting of frames 
 that include a prespecified ROI
