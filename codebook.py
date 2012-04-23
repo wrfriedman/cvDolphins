@@ -6,7 +6,7 @@ Created on Feb 28, 2012
 
 from cv import CaptureFromFile, CreateImage, QueryFrame, IPL_DEPTH_32F, IPL_DEPTH_8U, createImage,\
     GetCaptureProperty, CV_CAP_PROP_FRAME_WIDTH, CV_CAP_PROP_FRAME_HEIGHT, Zero, Split, CV_RGB2HSV,\
-    CaptureFromCAM, getSize, NamedWindow
+    CaptureFromCAM, getSize, NamedWindow, Max, Min,
 
 class backgroundRemover():
 
@@ -42,8 +42,8 @@ class backgroundRemover():
             self.HSV = CV_RGB2HSV(bgI)
         Split(bgI, self.H, self.S, self.V, None) #split out the channels
         # Assign values from the first frame to max & min codebook values
-        self.Hmax = self.H
-        self.Hmin = self.H
+        self.Hmax = Max(self.H)
+        self.Hmin = min(self.H)
 
         self.Smax = self.S
         self.Smin = self.S
